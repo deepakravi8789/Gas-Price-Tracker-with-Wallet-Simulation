@@ -7,6 +7,8 @@ import { EthPriceDisplay } from "@/components/eth-price-display"
 import { GasTracker } from "@/components/gas-tracker"
 import { SimulationPanel } from "@/components/simulation-panel"
 import { GasChart } from "@/components/gas-chart"
+import { WalletConnector } from "@/components/wallet-connector"
+import { WalletSimulator } from "@/components/wallet-simulator"
 import { startGasTracking, startEthPriceTracking } from "@/lib/blockchain"
 
 export default function Dashboard() {
@@ -36,6 +38,12 @@ export default function Dashboard() {
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <EthPriceDisplay />
             <ModeToggle />
+          </div>
+
+          {/* Wallet Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <WalletConnector />
+            <WalletSimulator />
           </div>
 
           {/* Main Content */}
